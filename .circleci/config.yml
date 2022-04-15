@@ -8,7 +8,7 @@ jobs:
       - run:
           command: |
             echo "CIRCLE_PR_NUMBER: ${CIRCLE_PR_NUMBER}"
-            PR_NUMBER = ${CIRCLE_PULL_REQUEST##*/}
+            export PR_NUMBER = ${CIRCLE_PULL_REQUEST##*/}
             echo "PR NUMBER: ${PR_NUMBER}"
       - checkout
 
