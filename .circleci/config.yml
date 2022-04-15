@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.07
+    steps:
+      - run:
+          command: |
+            echo "CIRCLE_PR_NUMBER: ${CIRCLE_PR_NUMBER}"
+            PR_NUMBER = ${CIRCLE_PULL_REQUEST##*/}
+            echo "PR NUMBER: ${PR_NUMBER}"
+      - checkout
+
